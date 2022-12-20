@@ -1,0 +1,192 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 236576 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=9856, tid=0x000000000000322c
+#
+# JRE version: OpenJDK Runtime Environment (8.0) (build 1.8.0-adoptopenjdk-_2018_05_19_00_59-b00)
+# Java VM: OpenJDK 64-Bit Server VM (25.71-b00 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001906f800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=12844, stack(0x000000001a8d0000,0x000000001a9d0000)]
+
+Stack: [0x000000001a8d0000,0x000000001a9d0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    620  447  s!   4       sun.misc.URLClassPath::getLoader (243 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001ab0b000 JavaThread "Service Thread" daemon [_thread_blocked, id=7380, stack(0x000000001aed0000,0x000000001afd0000)]
+  0x000000001907f000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=11556, stack(0x000000001a9d0000,0x000000001aad0000)]
+=>0x000000001906f800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=12844, stack(0x000000001a8d0000,0x000000001a9d0000)]
+  0x000000001906d000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=8616, stack(0x000000001a7d0000,0x000000001a8d0000)]
+  0x000000001907d000 JavaThread "Attach Listener" daemon [_thread_blocked, id=12432, stack(0x000000001a6d0000,0x000000001a7d0000)]
+  0x000000001907c000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7936, stack(0x000000001a5d0000,0x000000001a6d0000)]
+  0x0000000019058000 JavaThread "Finalizer" daemon [_thread_blocked, id=14428, stack(0x000000001a2d0000,0x000000001a3d0000)]
+  0x0000000003275800 JavaThread "Reference Handler" daemon [_thread_blocked, id=11292, stack(0x000000001a1d0000,0x000000001a2d0000)]
+  0x0000000003184000 JavaThread "main" [_thread_in_vm, id=5556, stack(0x0000000002f80000,0x0000000003080000)]
+
+Other Threads:
+  0x0000000019035800 VMThread [stack: 0x000000001a0d0000,0x000000001a1d0000] [id=11748]
+  0x000000001ab0c000 WatcherThread [stack: 0x000000001afd0000,0x000000001b0d0000] [id=188]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 47616K, used 9883K [0x000000078b300000, 0x000000078e800000, 0x00000007c0000000)
+  eden space 40960K, 24% used [0x000000078b300000,0x000000078bca6c18,0x000000078db00000)
+  from space 6656K, 0% used [0x000000078e180000,0x000000078e180000,0x000000078e800000)
+  to   space 6656K, 0% used [0x000000078db00000,0x000000078db00000,0x000000078e180000)
+ ParOldGen       total 109568K, used 0K [0x0000000721800000, 0x0000000728300000, 0x000000078b300000)
+  object space 109568K, 0% used [0x0000000721800000,0x0000000721800000,0x0000000728300000)
+ Metaspace       used 6213K, capacity 6404K, committed 6528K, reserved 1056768K
+  class space    used 723K, capacity 794K, committed 896K, reserved 1048576K
+
+Card table byte_map: [0x0000000012640000,0x0000000012b40000] byte_map_base: 0x000000000ed34000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005a52be50
+ Begin Bits: [0x0000000013290000, 0x0000000015a30000)
+ End Bits:   [0x0000000015a30000, 0x00000000181d0000)
+
+Polling page: 0x0000000001320000
+
+CodeCache: size=245760Kb used=2019Kb max_used=2019Kb free=243740Kb
+ bounds [0x0000000003280000, 0x00000000034f0000, 0x0000000012280000]
+ total_blobs=739 nmethods=447 adapters=206
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.590 Thread 0x000000001907f000  442       3       java.util.Objects::requireNonNull (15 bytes)
+Event: 0.590 Thread 0x000000001907f000 nmethod 442 0x0000000003473650 code [0x00000000034737c0, 0x00000000034739e8]
+Event: 0.594 Thread 0x000000001907f000  443       3       java.util.zip.ZipEntry::<init> (43 bytes)
+Event: 0.594 Thread 0x000000001907f000 nmethod 443 0x0000000003473ad0 code [0x0000000003473c20, 0x0000000003473e30]
+Event: 0.597 Thread 0x000000001907f000  445       3       java.util.zip.ZipCoder::toString (190 bytes)
+Event: 0.600 Thread 0x000000001907f000 nmethod 445 0x0000000003474250 code [0x00000000034745e0, 0x00000000034765b8]
+Event: 0.600 Thread 0x000000001907f000  446       3       java.util.zip.ZipCoder::decoder (35 bytes)
+Event: 0.600 Thread 0x000000001907f000 nmethod 446 0x00000000034776d0 code [0x0000000003477860, 0x0000000003477ee8]
+Event: 0.602 Thread 0x000000001906f800  447  s!   4       sun.misc.URLClassPath::getLoader (243 bytes)
+Event: 0.611 Thread 0x000000001906d000  449  s    4       sun.misc.URLClassPath::getNextLoader (88 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.319 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b680780) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.319 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b680990) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.320 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b681a20) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.320 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b681c30) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.320 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b6833a8) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.320 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b6835b8) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.320 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b684850) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.320 Thread 0x0000000003184000 Exception <a 'java/security/PrivilegedActionException'> (0x000000078b684a60) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.435 Thread 0x0000000003184000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000078b7cc688) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.437 Thread 0x0000000003184000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000078b7d9a30) thrown at [C:\Users\jenkins\workspace\openjdk8_build_x86-64_windows\openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+
+Events (10 events):
+Event: 0.616 loading class sun/nio/fs/WindowsPathParser
+Event: 0.616 loading class sun/nio/fs/WindowsPathParser done
+Event: 0.616 loading class sun/nio/fs/WindowsPathType
+Event: 0.616 loading class sun/nio/fs/WindowsPathType done
+Event: 0.616 loading class sun/nio/fs/WindowsPathParser$Result
+Event: 0.616 loading class sun/nio/fs/WindowsPathParser$Result done
+Event: 0.616 loading class sun/nio/fs/Util
+Event: 0.616 loading class sun/nio/fs/Util done
+Event: 0.616 loading class java/net/URI
+Event: 0.617 loading class java/net/URI done
+
+
+Dynamic libraries:
+0x00007ff6e35b0000 - 0x00007ff6e35e5000 	C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\bin\java.exe
+0x00007fffbccd0000 - 0x00007fffbcec5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fffbb800000 - 0x00007fffbb8be000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fffba9b0000 - 0x00007fffbac78000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffbbed0000 - 0x00007fffbbf7e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fffbb460000 - 0x00007fffbb4fe000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fffbc800000 - 0x00007fffbc89c000 	C:\WINDOWS\System32\sechost.dll
+0x00007fffbb930000 - 0x00007fffbba55000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fffbb5d0000 - 0x00007fffbb770000 	C:\WINDOWS\System32\USER32.dll
+0x00007fffba600000 - 0x00007fffba622000 	C:\WINDOWS\System32\win32u.dll
+0x00007fffbbc90000 - 0x00007fffbbcbb000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffba850000 - 0x00007fffba95d000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fffbac80000 - 0x00007fffbad1d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fffba6e0000 - 0x00007fffba7e0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fffa4940000 - 0x00007fffa4bda000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007fffbb1d0000 - 0x00007fffbb200000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000005a5b0000 - 0x000000005a682000 	C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\jre\bin\msvcr100.dll
+0x0000000059d60000 - 0x000000005a5a9000 	C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\jre\bin\server\jvm.dll
+0x00007fffbb1c0000 - 0x00007fffbb1c8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fffa54e0000 - 0x00007fffa54e9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fffbbcc0000 - 0x00007fffbbd2b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fffa9840000 - 0x00007fffa9867000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fffa8b00000 - 0x00007fffa8b0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fffa1690000 - 0x00007fffa169f000 	C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\jre\bin\verify.dll
+0x00007fff8d240000 - 0x00007fff8d269000 	C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\jre\bin\java.dll
+0x00007fff9b2c0000 - 0x00007fff9b2d6000 	C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\jre\bin\zip.dll
+0x00007fffbc0b0000 - 0x00007fffbc7f4000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007fffb84d0000 - 0x00007fffb8c64000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007fffbc930000 - 0x00007fffbcc85000 	C:\WINDOWS\System32\combase.dll
+0x00007fffb9e30000 - 0x00007fffb9e5e000 	C:\WINDOWS\SYSTEM32\Wldp.dll
+0x00007fffbb200000 - 0x00007fffbb2ad000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007fffbb8d0000 - 0x00007fffbb925000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007fffba320000 - 0x00007fffba33f000 	C:\WINDOWS\SYSTEM32\profapi.dll
+
+VM Arguments:
+jvm_args: -Dcom.android.sdkmanager.toolsdir=C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\\.. 
+java_command: com.android.sdklib.tool.AvdManagerCli list target -c
+java_class_path (initial): C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\dvlib-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\jimfs-1.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\jsr305-1.3.9.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\repository-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\j2objc-annotations-1.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\layoutlib-api-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\gson-2.3.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\httpcore-4.2.5.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\commons-logging-1.1.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\commons-compress-1.12.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\annotations-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\error_prone_annotations-2.0.18.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\animal-sniffer-annotations-1.14.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\httpclient-4.2.6.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\commons-codec-1.6.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\common-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\kxml2-2.3.0.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\httpmime-4.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\annotations-12.0.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\sdklib-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\guava-22.0.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer/Tools\OpenJDK\Windows
+CLASSPATH=C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\dvlib-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\jimfs-1.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\jsr305-1.3.9.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\repository-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\j2objc-annotations-1.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\layoutlib-api-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\gson-2.3.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\httpcore-4.2.5.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\commons-logging-1.1.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\commons-compress-1.12.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\annotations-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\error_prone_annotations-2.0.18.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\animal-sniffer-annotations-1.14.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\httpclient-4.2.6.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\commons-codec-1.6.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\common-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\kxml2-2.3.0.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\httpmime-4.1.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\annotations-12.0.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\sdklib-26.0.0-dev.jar;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\tools\bin\..\lib\guava-22.0.jar
+PATH=C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\tools\dart-sdk\bin;C:\Users\ZulfaHidayat\Documents\flutter_windows_2.2.3-stable\flutter\bin;C:\flutter\bin;C:\Program Files\Java\jdk-17\bin;C:\xampp\php;C:\composer;C:\Program Files\OpenJDK\openjdk-8u312-b07\bin;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk;%LOCALAPPDATA%\Android\Sdk\platform-tools;C:\ProgramData\chocolatey\lib\nodejs.install\tools;C:\Program Files\nodejs\;C:\Gradle\gradle-6.9.1\bin;C:\Users\ZulfaHidayat\AppData\Roaming\npm;C:\Program Files\Java\jdk-17\bin;C:\Users\ZulfaHidayat\AppData\Local\Microsoft\WindowsApps;C:\Users\ZulfaHidayat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ZulfaHidayat\Documents\flutter_windows_2.2.3-stable\flutter\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\tools\dart-sdk\bin;C:\Users\ZulfaHidayat\AppData\Roaming\Pub\Cache\bin;C:\tools\dart-sdk\bin;C:\Users\ZulfaHidayat\Documents\flutter_windows_2.2.3-stable\flutter\bin;C:\flutter\bin;C:\Program Files\Java\jdk-17\bin;C:\Users\ZulfaHidayat\AppData\Roaming\Composer\vendor\bin;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk;C:\Users\ZulfaHidayat\AppData\Local\Android\Sdk\platform-tools;C:\ProgramData\chocolatey\lib\nodejs.install\tools;C:\Users\ZulfaHidayat\AppData\Roaming\npm;C:\Gradle\gradle-6.9.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\bin;
+USERNAME=ZulfaHidayat
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1503)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 10379868k(2796276k free), swap 10379868k(4140k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.71-b00) for windows-amd64 JRE (1.8.0-adoptopenjdk-_2018_05_19_00_59-b00), built on May 19 2018 01:02:12 by "jenkins" with MS VC++ 10.0 (VS2010)
+
+time: Thu Mar 10 10:11:42 2022
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
